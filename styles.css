@@ -9,6 +9,7 @@
   --color-purple: #7c3aed;
   --color-purple-dark: #4c1d95;
   --color-purple-deep: #2e1065;
+  --brand-gradient: linear-gradient(90deg, #8e4cf3 0%, #637cf9 100%);
   --color-purple-light: #ede9fe;
   --color-border: #e5ddf3;
   --color-border-dark: #6941a0;
@@ -757,6 +758,38 @@ body {
   border-color: #4c1d95 !important;
   text-shadow: 0 1px 1px rgba(0,0,0,.18);
 }
+
+/* Spark AI reference: bright violet-to-blue surfaces with white copy. */
+.dark-section:not(.dashboard-section), .section.dark,
+.good-panel, .plan-card.featured-plan, .journey-grid article:nth-child(3),
+.final-cta-box, .cta-box, .ai-human-grid .human-card,
+.after-card, .hire-impact, .human-role-preview, .result-visual {
+  background: var(--brand-gradient);
+  color: #fff;
+  border-color: transparent;
+}
+.dark-section:not(.dashboard-section) :is(.eyebrow, .light-copy, .team-list span),
+.section.dark :is(.eyebrow, .growth-core-card span, .growth-core-card small, .growth-role-grid b),
+.agent-cap-grid :is(span, p),
+.good-panel :is(.panel-label, li),
+.featured-plan :is(.plan-tier, .plan-level, .plan-summary, .plan-includes, .plan-list li, .plan-footnote),
+.journey-grid article:nth-child(3) :is(span, p),
+.human-role-preview :is(.role-preview-top, p, .human-role-flow, .human-role-flow i),
+.hire-impact > span, .after-card li::before {
+  color: #fff;
+}
+.team-list > div, .agent-cap-grid article,
+.growth-core-card, .growth-role-grid > div,
+.human-card .chips span {
+  background: rgba(255,255,255,.08);
+  border-color: rgba(255,255,255,.25);
+  color: #fff;
+}
+.featured-plan .plan-price, .featured-plan .plan-list li,
+.after-card li { border-color: rgba(255,255,255,.25); }
+.featured-plan .plan-list li::before { color: #fff; }
+.growth-role-grid > div:hover, .team-list > div:hover,
+.agent-cap-grid article:hover { background: rgba(255,255,255,.14); border-color: rgba(255,255,255,.5); }
 
 /* Readable card content and comfortable controls on phones. */
 @media (max-width: 760px) {
