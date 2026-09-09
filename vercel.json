@@ -1,0 +1,15 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "",
+  "installCommand": "",
+  "outputDirectory": ".",
+  "redirects": [
+    { "source": "/ai-agents.html", "destination": "/ai-agent.html", "permanent": false },
+    { "source": "/human-bot.html", "destination": "/ai-agent.html", "permanent": false },
+    { "source": "/growth-pod.html", "destination": "/human-agents.html", "permanent": false },
+    { "source": "/revenue-os.html", "destination": "/index.html", "permanent": false },
+    { "source": "/ai-sales-os.html", "destination": "/index.html", "permanent": false },
+    { "source": "/ai-growth-os.html", "destination": "/index.html", "permanent": false }
+  ]
+}

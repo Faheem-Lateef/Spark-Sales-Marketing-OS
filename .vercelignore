@@ -1,0 +1,7 @@
+node_modules
+.git
+.env*
+data
+server.mjs
+README.md
+QA_REPORT.md
