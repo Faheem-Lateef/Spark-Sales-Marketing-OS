@@ -9,12 +9,14 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!menu || !nav) return;
     nav.classList.remove("mobile-open");
     menu.setAttribute("aria-expanded", "false");
+    menu.setAttribute("aria-label", "Open menu");
   };
   if (menu && nav) {
     menu.addEventListener("click", () => {
       const open = !nav.classList.contains("mobile-open");
       nav.classList.toggle("mobile-open", open);
       menu.setAttribute("aria-expanded", String(open));
+      menu.setAttribute("aria-label", open ? "Close menu" : "Open menu");
     });
     qsa("a", nav).forEach(link => link.addEventListener("click", closeMenu));
     document.addEventListener("click", event => {
@@ -56,6 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
     modal.addEventListener("mousedown", event => { if (event.target === modal) closeModal(modal); });
   });
   document.addEventListener("keydown", event => {
+    if (event.key === "Escape" && nav?.classList.contains("mobile-open")) { closeMenu(); menu.focus(); }
     if (event.key === "Escape" && activeModal) closeModal();
     if (event.key === "Tab" && activeModal) {
       const items = qsa(focusableSelector, activeModal);
